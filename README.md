@@ -18,7 +18,7 @@ The Nexus is a custom, lightweight 3D game engine and scene editor built from th
 
 To compile and run The Nexus on Windows, ensure you have the following installed and configured in your system `PATH`:
 
-1. **C++ Compiler:** MinGW-w64 (GCC) or MSVC.
+1. **C++ Compiler:** MinGW-w64 (GCC).
 2. **Raylib:** The engine core framework.
 3. **ImGui / rlImGui:** Included in the project for immediate-mode UI rendering.
 4. **Python 3:** Required for the `nexus_smart_extractor.py` utility to run in the background during asset ingestion.
@@ -27,7 +27,7 @@ To compile and run The Nexus on Windows, ensure you have the following installed
 
 ## How to Compile
 
-Open your terminal (PowerShell or Command Prompt) in the root directory of the project. If you are using a standard MinGW `g++` setup, you can compile the engine into a standalone executable using the following command:
+Open your terminal (PowerShell or Command Prompt) in the root directory of the project. To compile the engine into a standalone executable, use the following exact build command to ensure all translation units, Windows dialogues, and C++17 standards are correctly linked:
 
 ```powershell
-g++ *.cpp -o nexus.exe -O3 -Wall -I include/ -L lib/ -lraylib -lopengl32 -lgdi32 -lwinmm
+g++ main.cpp file_dialog.cpp nexus_3dviewportcontrols.cpp nexus_environment.cpp nexus_character.cpp nexus_texture_extractor.cpp nexus_timeline.cpp nexus_project.cpp nexus_asset_browser.cpp nexus_win32.cpp nexus_asset_scanner.cpp nexus_anim_selector.cpp nexus_waypoint.cpp nexus_prefab.cpp nexus_animator.cpp nexus_publisher.cpp nexus_player.cpp nexus_combat.cpp nexus_character_creator.cpp nexus_scene_manager.cpp nexus_manual_importer.cpp rlImGui.cpp imgui.cpp imgui_draw.cpp imgui_tables.cpp imgui_widgets.cpp -o nexus3d.exe -O2 -Wall -Wno-unused-variable -Wno-sign-compare -std=c++17 -I include -L lib -lraylib -lopengl32 -lgdi32 -lwinmm -lcomdlg32
