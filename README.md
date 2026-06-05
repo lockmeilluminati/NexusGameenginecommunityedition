@@ -1,4 +1,4 @@
-echo "# The Nexus Game Engine - Community Edition
+The Nexus Game Engine - Community Edition
 
 **Developed by DoctorGraphene | A Section 9 Initiative**
 
